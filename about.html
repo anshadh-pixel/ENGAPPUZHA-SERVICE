@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Engapuzha X</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* CSS Variables & Global Resets */
+        :root {
+            --color-primary: #2962FF; 
+            --color-text: #2c3e50; 
+            --color-muted: #7f8c8d;
+            --color-background: #f8f9fa; 
+            --color-white: #ffffff;
+            --container-width: 1100px;
+            --spacing-unit: 20px;
+            --radius-default: 8px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: var(--color-text); background-color: var(--color-background); }
+        a { text-decoration: none; color: var(--color-primary); }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 var(--spacing-unit); }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: var(--radius-default);
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        
+        /* WhatsApp Button Styles */
+        .btn-whatsapp {
+            background-color: #25D366; 
+            color: white;
+            border-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+        }
+
+        /* --- Header & Navigation --- */
+        .header { background-color: var(--color-white); border-bottom: 1px solid #eee; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.8rem; font-weight: 700; display: flex; align-items: center; gap: 5px; color: var(--color-primary); }
+        .nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+        
+        /* Specific Page Styles */
+        .page-header { padding: 80px 0; text-align: center; background-color: var(--color-white); border-bottom: 1px solid #eee; }
+        .page-header h1 { font-size: 3rem; color: var(--color-primary); margin-bottom: 10px; }
+        
+        /* About Content Section */
+        .about-main { padding: 60px 0; }
+        .about-main p { margin-bottom: 20px; font-size: 1.1rem; }
+
+        /* --- Contact CTA Section --- */
+        .contact-cta-section {
+            padding: 60px 0;
+            background-color: var(--color-primary); 
+            color: var(--color-white);
+            text-align: center;
+        }
+        .contact-cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .contact-cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        .footer { background-color: var(--color-white); padding: 60px 0 30px; border-top: 1px solid #eee; }
+        .copyright { text-align: center; font-size: 0.9rem; color: var(--color-muted); padding-top: 20px; border-top: 1px solid #eee; }
+        
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    Engapuzha X
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="nav-item-whatsapp">
+                        <a href="https://wa.me/919656201833" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Mission & Story</h1>
+            <p style="color: var(--color-muted);">Connecting Engapuzha with trustworthy and fast local services.</p>
+        </div>
+    </section>
+
+    <section class="about-main">
+        <div class="container">
+            <h2>Our Foundation</h2>
+            <p>Engapuzha X is built on the simple philosophy that getting help should be easy, fast, and reliable. We noticed the gap between residents needing essential services (like emergency plumbing, vehicle breakdown support, or even local taxi booking) and finding verified professionals quickly in our community. Our platform solves this by curating a network of the best, most vetted local experts.</p>
+            
+            <h2>Our Commitment</h2>
+            <p>We are committed to **supporting the local economy** while ensuring **premium service quality** for every customer. Every service provider in our network undergoes a thorough background check and receives continuous rating and feedback from users like you. Your safety and satisfaction are our top priority.</p>
+        </div>
+    </section>
+    
+    <section class="contact-cta-section">
+        <div class="container">
+            <h2>ഞങ്ങളെ ബന്ധപ്പെടുക (Contact Us)</h2>
+            <p>നിങ്ങളുടെ സേവന ആവശ്യങ്ങൾക്കായി ഉടൻ WhatsApp വഴി ബന്ധപ്പെടുക. ഞങ്ങൾ 24/7 നിങ്ങളുടെ സേവനത്തിനായി സജ്ജരാണ്!</p>
+            <a href="https://wa.me/919656201833" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> 9656201833 വഴി ചാറ്റ് ചെയ്യുക
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                Designed by <a href="https://wa.me/919656201833" target="_blank">AD Company (9656201833)</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

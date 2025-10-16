@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engapuzha X Services - Your Local Experts</title>
+    <meta name="theme-color" content="#2962FF">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* --- CSS Variables & Global Resets --- */
+        :root {
+            --color-primary: #2962FF; /* Strong Blue */
+            --color-secondary: #00E5FF; /* Light Blue/Cyan */
+            --color-text: #2c3e50; /* Dark Text */
+            --color-muted: #7f8c8d; /* Muted Gray */
+            --color-background: #f8f9fa; /* Light Gray background */
+            --color-white: #ffffff;
+            --container-width: 1100px;
+            --spacing-unit: 20px;
+            --radius-default: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            scroll-behavior: smooth; 
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: color 0.2s;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: var(--radius-default);
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        
+        /* WhatsApp Button Styles */
+        .btn-whatsapp {
+            background-color: #25D366; 
+            color: white;
+            border-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+        
+        /* --- Header & Navigation --- */
+        .topbar { background-color: var(--color-white); border-bottom: 1px solid #eee; }
+        .topbar-content {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 0; font-size: 0.85rem;
+        }
+        .header { background-color: var(--color-white); border-bottom: 1px solid #eee; }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 1.8rem; font-weight: 700; display: flex;
+            align-items: center; gap: 5px; color: var(--color-primary);
+        }
+        .nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+        
+        /* --- Page Title --- */
+        .page-title { text-align: center; padding: 60px 0 40px; }
+        .page-title h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-title p { max-width: 800px; margin: 0 auto; color: var(--color-muted); }
+
+        /* --- Service Cards Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        .service-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-default);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card-image {
+            height: 220px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card-content { padding: var(--spacing-unit); text-align: center; }
+        .card-view-btn { 
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--color-primary);
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 2px solid var(--color-primary);
+            cursor: pointer;
+        }
+        
+        /* --- Why Choose Us Section --- */
+        .features-section {
+            padding: 60px 0;
+            background-color: var(--color-white);
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        .features-section .subtitle {
+            font-size: 1.1rem;
+            color: var(--color-muted);
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .feature-item {
+            padding: 25px;
+            border-radius: var(--radius-default);
+            background-color: var(--color-background);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s;
+        }
+
+        .feature-item:hover {
+            background-color: #eaf1fb;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--color-muted);
+        }
+
+        /* --- Call to Action Section (CTA) --- */
+        .cta-section { background-color: var(--color-primary); padding: 80px 0; color: var(--color-white); }
+        .cta-content { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+        .cta-image-container { flex-shrink: 0; width: 300px; position: relative; top: -100px; left: -30px; }
+        .cta-image { width: 100%; height: auto; border-radius: var(--radius-default); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        .cta-text h2 { font-size: 2.5rem; }
+        .cta-actions { display: flex; align-items: center; gap: 20px; }
+        .cta-actions .btn-secondary { color: var(--color-white); border-color: var(--color-white); }
+
+        /* --- Footer --- */
+        .footer { background-color: var(--color-white); padding: 60px 0 30px; border-top: 1px solid #eee; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr) 2fr;
+            gap: 40px; margin-bottom: 40px;
+        }
+
+        .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
+        
+        /* Updated Copyright Style */
+        .copyright { 
+            text-align: center; 
+            font-size: 0.95rem; 
+            color: var(--color-muted); 
+            padding-top: 20px; 
+            border-top: 1px solid #eee; 
+            font-weight: 600; /* Added bolding for visibility */
+        }
+        .copyright a {
+            color: var(--color-text);
+        }
+
+        /* --- Dialog Box Styles --- */
+        .service-dialog { border: none; padding: 0; border-radius: 12px; width: min(95vw, 600px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); z-index: 1000; }
+        .dialog-content { padding: var(--spacing-unit); }
+        .dialog-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-muted); }
+        .dialog-details ul { list-style: none; padding: 0; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+        .dialog-details ul li { padding: 8px 0; font-size: 1rem; color: var(--color-text); border-bottom: 1px dashed #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+        .dialog-details ul li strong { color: var(--color-primary); width: 150px; flex-shrink: 0; }
+        .dialog-actions { margin-top: var(--spacing-unit); display: flex; gap: 10px; }
+
+        /* --- RESPONSIVENESS (Mobile Optimization) --- */
+        @media (max-width: 992px) {
+            .navbar { flex-direction: column; gap: 10px; }
+            .cta-content { flex-direction: column; text-align: center; }
+            .cta-image-container { top: 0; left: 0; width: 250px; margin: -20px auto 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .page-title h1 { font-size: 2rem; }
+            .topbar, .nav-links li:not(:nth-child(-n+3)) { display: none; } 
+            .nav-links { justify-content: space-around; width: 100%; gap: 10px; }
+            .services-grid, .features-grid, .footer-grid { grid-template-columns: 1fr; } 
+            .cta-text h2 { font-size: 1.8rem; }
+            .cta-actions { flex-direction: column; width: 100%; }
+            .cta-actions a { width: 100%; }
+            .feature-item { text-align: center; }
+        }
+        
+        /* Small Mobile Dialog improvements */
+        @media (max-width: 480px) {
+            .dialog-details ul li { flex-direction: column; align-items: flex-start; }
+            .dialog-details ul li strong { width: auto; margin-bottom: 5px; }
+            .dialog-actions { flex-direction: column; }
+            .dialog-actions a { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-content">
+                <div class="topbar-contact">
+                    <a href="mailto:contact@engapuzhaservices.com"><i class="fas fa-envelope"></i> contact@engapuzhaservices.com</a>
+                    <a href="https://wa.me/919656201833" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                    <span class="d-none d-md-inline-block"><i class="fas fa-map-marker-alt"></i> Engapuzha, Kerala, IN.</span>
+                </div>
+                <div class="topbar-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-tools"></i>
+                    Engapuzha X
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li> <li><a href="https://wa.me/919656201833" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Our Local Services</h1>
+            <p>We are dedicated to providing fast, reliable, and verified home and repair services, transportation, and daily essentials across Engapuzha and surrounding areas. Our helpers and partners are skilled, insured, and ready to assist you.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="services-grid" id="servicesGrid">
+            </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <h2>Why Choose Engapuzha X?</h2>
+            <p class="subtitle">We connect you with trusted local experts for all your home and daily needs in Engapuzha.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 Availability</h3>
+                    <p>Emergency services for plumbing, electrical, and vehicle breakdown available round the clock.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>100% Local Experts</h3>
+                    <p>We connect you only with verified and reliable professionals from Engapuzha and surrounding areas.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Guaranteed Quality</h3>
+                    <p>All our service providers are rated and guaranteed to provide quality workmanship and customer satisfaction.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>Easy Booking (WhatsApp)</h3>
+                    <p>Booking a service is as easy as sending a message! Chat with us directly on WhatsApp for quick response.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-image-container">
+                    <img src="./images/cta-helper.jpg" alt="Local Helper Ready to Assist" class="cta-image">
+                </div>
+                <div class="cta-text">
+                    <h2>Having a problem? <br>We'll fix it today!</h2>
+                    <p>Or</p>
+                    <div class="cta-actions">
+                        <a href="https://wa.me/919656201833" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                        <a href="#" class="btn btn-secondary">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-tools"></i>
+                        Engapuzha X
+                    </a>
+                    <p>Your trusted partner for all home repair and maintenance needs in the Engapuzha area.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Utility pages</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">404 Not Found</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col newsletter">
+                    <h4>Subscribe to our newsletter</h4>
+                    <input type="email" placeholder="Enter your email">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Powered by <a href="https://wa.me/919656201833" target="_blank">AD Company (9656201833)</a>
+            </div>
+        </div>
+    </footer>
+    
+    <dialog class="service-dialog" id="serviceDetailsDialog">
+        <div class="dialog-content">
+            <button class="dialog-close" onclick="closeServiceDetails()">&times;</button>
+            <h2 id="dialogTitle"></h2>
+            <p id="dialogShortDesc" style="color: var(--color-muted);"></p>
+            
+            <div class="dialog-details">
+                <p style="font-weight: 600; margin-top: 15px;">Key Details:</p>
+                <ul>
+                    <li><strong>Min. Cost:</strong> <span id="dialogMinCost"></span></li>
+                    <li><strong>Helper Rating:</strong> <span id="dialogRating"></span></li>
+                    <li><strong>Time Estimate:</strong> <span id="dialogTime"></span></li>
+                    <li><strong>Verified:</strong> <span id="dialogVerified"></span></li>
+                </ul>
+                
+                <p id="dialogLongDesc" style="margin-top: 15px; font-size: 0.95rem;"></p>
+            </div>
+            
+            <div class="dialog-actions">
+                <a id="dialogWhatsappLink" href="https://wa.me/919656201833" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                <a href="#" class="btn btn-secondary">Get Free Quote</a>
+            </div>
+        </div>
+    </dialog>
+
+
+    <script>
+        // --- Service Data (14 Total Services) ---
+        const WHATSAPP_NUMBER = '919656201833'; 
+
+        const SERVICES = [
+            // HOME REPAIR SERVICES (7)
+            { id: 'plumbing', title: 'Faucet & Leak Repairs', minCost: 'Depend on work', rating: '4.7/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Fixing all minor and major water leaks, installing new taps and fixtures. Quick response guaranteed.', longDesc: 'Includes full inspection, minor material costs, and labor for the first hour. Major pipe replacements are quoted separately after inspection.', imagePlaceholder: './images/service-plumbing.jpg' },
+            { id: 'remodel', title: 'Bathroom Remodeling Service', minCost: 'Depend on work', rating: '4.9/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Full/partial bathroom renovation, tile work, fixture upgrades, and space optimization.', longDesc: 'Detailed quote provided after site visit. Includes planning, design consultation, demolition, and installation of new accessories.', imagePlaceholder: './images/service-remodel.jpg' },
+            { id: 'drain', title: 'Drain Cleaning & Repairs', minCost: 'Depend on work', rating: '4.6/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Unclogging sinks, tubs, toilets, and main lines using hydro-jetting or manual tools.', longDesc: 'Price includes basic inspection and first hour of labor for unclogging. Chemical treatments and major pipe repair costs are extra.', imagePlaceholder: './images/service-drain.jpg' },
+            { id: 'sewer', title: 'Sewer Repair & Cleaning', minCost: 'Depend on work', rating: '4.3/5.0', time: 'Depend on work', verified: 'No', desc: 'Comprehensive sewer line inspection and cleaning services for smooth flow.', longDesc: 'Uses advanced camera inspection and motorized cleaning tools. Price covers initial setup and diagnostic fee.', imagePlaceholder: './images/service-sewer.jpg' },
+            { id: 'waterline', title: 'Water Line Repair', minCost: 'Depend on work', rating: '4.5/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Repairing or replacing damaged water supply lines inside and outside the property.', longDesc: 'Includes leak detection and minor digging if required. Price is for emergency patching; full replacement requires a detailed quote.', imagePlaceholder: './images/service-waterline.jpg' },
+            { id: 'electrician', title: 'Electrician Services', minCost: 'Depend on work', rating: '4.8/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Wiring, switchboard repair, fan/light installation and troubleshooting.', longDesc: 'Call-out fee includes 1 hour of basic labor and fault diagnosis. Materials and complex wiring work are charged extra.', imagePlaceholder: './images/service-electrician.jpg' },
+            { id: 'furniture', title: '6. Carpentry & Furniture Service', minCost: 'Depend on work', rating: '4.8/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Custom furniture making, repair, polishing, and modular kitchen work.', longDesc: 'Free consultation and design estimate provided. High-quality wood and craftsmanship guaranteed.', imagePlaceholder: './images/service-furniture.jpg' },
+            
+            // DAILY/TRANSPORT/OTHER SERVICES (7) - Reduced from 8 to keep balance.
+            { id: 'mobileservice', title: '1. Mobile Repair & Service', minCost: 'Depend on work', rating: '4.8/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Screen replacement, battery replacement, software fix and accessories.', longDesc: 'Doorstep pick-up and drop available for major repairs. Diagnostic fee applies for quick checks.', imagePlaceholder: './images/service-mobile.jpg' },
+            { id: 'taxi', title: '2. Taxi Service (Car, Auto, Bus)', minCost: 'Depend on work', rating: '4.9/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Auto Rickshaws, Cars, and Bus bookings for local and inter-city travel.', longDesc: 'Bookings available 24/7. Rates based on distance and vehicle type. Special package available for group travel.', imagePlaceholder: './images/service-taxi.jpg' },
+            { id: 'auto', title: '3. Auto Service (Local Hire)', minCost: 'Depend on work', rating: '4.7/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Quick local auto rickshaw service within Engapuzha town limits.', longDesc: 'Instant booking available via app/call. Fair rates as per local tariff. Ideal for short-distance travel.', imagePlaceholder: './images/service-auto.jpg' },
+            { id: 'food', title: '4. Food & Groceries Delivery', minCost: 'Depend on work', rating: '4.6/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Delivery of fresh Vegetables, Fruits, Fish, Meat, and ready-made meals.', longDesc: 'Partnerships with local vendors ensures freshness. Delivery charges vary based on distance and order size.', imagePlaceholder: './images/service-food.jpg' },
+            { id: 'computer', title: '5. Computer Repair & IT Service', minCost: 'Depend on work', rating: '4.4/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Laptop/Desktop repair, virus removal, software installation, and networking support.', longDesc: 'On-site repair for minor issues. Pick-up and drop facility for major hardware problems.', imagePlaceholder: './images/service-computer.jpg' },
+            { id: 'fuel', title: '7. Fuel/Breakdown Emergency Aid', minCost: 'Depend on work', rating: '4.9/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Emergency fuel delivery or roadside assistance for vehicle breakdowns.', longDesc: 'Quick response team for minor on-road fixes or transporting fuel. Towing services arranged if needed.', imagePlaceholder: './images/service-breakdown.jpg' },
+            { id: 'hospital', title: '8. Hospital & Medical Services', minCost: 'Depend on work', rating: '4.7/5.0', time: 'Depend on work', verified: 'Yes', desc: 'Appointment booking, emergency ambulance services, and local clinic finder.', longDesc: 'We connect you with the nearest suitable hospital or healthcare facility during emergencies.', imagePlaceholder: './images/service-hospital.jpg' },
+        ];
+
+        // --- JavaScript Rendering ---
+        const servicesGrid = document.getElementById('servicesGrid');
+        const dialog = document.getElementById('serviceDetailsDialog');
+
+        function renderServices() {
+            servicesGrid.innerHTML = SERVICES.map(service => `
+                <div class="service-card">
+                    <div class="service-card-image" style="background-image: url('${service.imagePlaceholder}');">
+                        </div>
+                    <div class="service-card-content">
+                        <h3>${service.title}</h3>
+                        <p>${service.desc}</p>
+                        <span class="card-view-btn" onclick="openServiceDetails('${service.id}')">View Service</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // --- Dialog Box Functions (Code updated to include WhatsApp link customization) ---
+        
+        window.openServiceDetails = function(serviceId) {
+            const service = SERVICES.find(s => s.id === serviceId);
+
+            if (service) {
+                document.getElementById('dialogTitle').textContent = service.title;
+                document.getElementById('dialogShortDesc').textContent = service.desc;
+                document.getElementById('dialogMinCost').textContent = service.minCost; 
+                document.getElementById('dialogRating').textContent = service.rating;
+                document.getElementById('dialogTime').textContent = service.time; 
+                document.getElementById('dialogVerified').textContent = service.verified;
+                document.getElementById('dialogLongDesc').textContent = service.longDesc;
+                
+                // Customize WhatsApp link with the service title
+                const whatsappText = encodeURIComponent(`Hello, I need assistance with the *${service.title}* service. Can you please help?`);
+                document.getElementById('dialogWhatsappLink').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`;
+
+                dialog.showModal();
+            }
+        };
+
+        window.closeServiceDetails = function() {
+            dialog.close();
+        };
+
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', renderServices);
+    </script>
+</body>
+</html>
